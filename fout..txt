@@ -1,0 +1,137 @@
+/usr/local/rvm/gems/ruby-3.1.3/bin:
+/usr/local/rvm/gems/ruby-3.1.3@global/bin:
+/usr/local/rvm/rubies/ruby-3.1.3/bin:
+/vscode/bin/linux-x64/5235c6bb189b60b01b1f49062f4ffa42384f8c91/bin/remote-cli:
+/home/codespace/.local/bin:/home/codespace/.dotnet:
+/home/codespace/nvm/current/bin:
+/home/codespace/.php/current/bin:
+/home/codespace/.python/current/bin:
+/home/codespace/java/current/bin:
+/home/codespace/.ruby/current/bin:
+/home/codespace/.local/bin:
+/usr/local/oryx:/usr/local/go/bin:
+/go/bin:/usr/local/sdkman/bin:
+/usr/local/sdkman/candidates/java/current/bin:
+/usr/local/sdkman/candidates/gradle/current/bin:
+/usr/local/sdkman/candidates/maven/current/bin:
+/usr/local/rvm/gems/default/bin:
+/usr/local/rvm/gems/default@global/bin:
+/usr/local/rvm/rubies/default/bin:
+/usr/local/share/rbenv/bin:/opt/conda/bin:/usr/local/php/current/bin:/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/nvs:/usr/local/share/nvm/versions/node/v16.18.1/bin:/usr/local/hugo/bin:/usr/local/dotnet/current:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:
+/home/codespace/.dotnet/tools:/usr/local/rvm/bin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------
+FileNotFoundError                         Traceback (most recent call last)
+File /usr/local/python/3.10.4/lib/python3.10/site-packages/pydot.py:1923, in Dot.create(self, prog, format, encoding)
+   1922 try:
+-> 1923     stdout_data, stderr_data, process = call_graphviz(
+   1924         program=prog,
+   1925         arguments=arguments,
+   1926         working_dir=tmp_dir,
+   1927     )
+   1928 except OSError as e:
+
+File /usr/local/python/3.10.4/lib/python3.10/site-packages/pydot.py:132, in call_graphviz(program, arguments, working_dir, **kwargs)
+    130 program_with_args = [program, ] + arguments
+--> 132 process = subprocess.Popen(
+    133     program_with_args,
+    134     env=env,
+    135     cwd=working_dir,
+    136     shell=False,
+    137     stderr=subprocess.PIPE,
+    138     stdout=subprocess.PIPE,
+    139     **kwargs
+    140 )
+    141 stdout_data, stderr_data = process.communicate()
+
+File /usr/local/python/3.10.4/lib/python3.10/subprocess.py:966, in Popen.__init__(self, args, bufsize, executable, stdin, stdout, stderr, preexec_fn, close_fds, shell, cwd, env, universal_newlines, startupinfo, creationflags, restore_signals, start_new_session, pass_fds, user, group, extra_groups, encoding, errors, text, umask, pipesize)
+    963             self.stderr = io.TextIOWrapper(self.stderr,
+    964                     encoding=encoding, errors=errors)
+--> 966     self._execute_child(args, executable, preexec_fn, close_fds,
+    967                         pass_fds, cwd, env,
+    968                         startupinfo, creationflags, shell,
+    969                         p2cread, p2cwrite,
+    970                         c2pread, c2pwrite,
+    971                         errread, errwrite,
+    972                         restore_signals,
+    973                         gid, gids, uid, umask,
+    974                         start_new_session)
+    975 except:
+    976     # Cleanup if the child failed starting.
+
+File /usr/local/python/3.10.4/lib/python3.10/subprocess.py:1842, in Popen._execute_child(self, args, executable, preexec_fn, close_fds, pass_fds, cwd, env, startupinfo, creationflags, shell, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, restore_signals, gid, gids, uid, umask, start_new_session)
+   1841         err_msg = os.strerror(errno_num)
+-> 1842     raise child_exception_type(errno_num, err_msg, err_filename)
+   1843 raise child_exception_type(err_msg)
+
+FileNotFoundError: [Errno 2] No such file or directory: 'dot'
+
+During handling of the above exception, another exception occurred:
+
+FileNotFoundError                         Traceback (most recent call last)
+File ~/.local/lib/python3.10/site-packages/IPython/core/formatters.py:342, in BaseFormatter.__call__(self, obj)
+    340     method = get_real_method(obj, self.print_method)
+    341     if method is not None:
+--> 342         return method()
+    343     return None
+    344 else:
+
+File /usr/local/python/3.10.4/lib/python3.10/site-packages/pyAgrum/lib/notebook.py:1550, in <lambda>(self)
+   1547 gum.config.run_hooks()
+   1549 # adding _repr_html_ to some pyAgrum classes !
+-> 1550 gum.BayesNet._repr_html_ = lambda self: getBN(self)
+   1551 gum.BayesNetFragment._repr_html_ = lambda self: getBN(self)
+   1552 gum.MarkovNet._repr_html_ = lambda self: getMN(self)
+
+File /usr/local/python/3.10.4/lib/python3.10/site-packages/pyAgrum/lib/notebook.py:918, in getBN(bn, size, nodeColor, arcWidth, arcLabel, arcColor, cmap, cmapArc)
+    915 if cmapArc is None:
+    916   cmapArc = cmap
+--> 918 return getGraph(BN2dot(bn, size=size, nodeColor=nodeColor, arcWidth=arcWidth, arcLabel=arcLabel,arcColor=arcColor, cmapNode=cmap, cmapArc=cmapArc), size)
+
+File /usr/local/python/3.10.4/lib/python3.10/site-packages/pyAgrum/lib/notebook.py:319, in getGraph(gr, size)
+    316 gr.del_node('"\\n"')
+    317 gr.del_node('"\\n\\n"')
+--> 319 return _reprGraph(gr, size, asString=True)
+
+File /usr/local/python/3.10.4/lib/python3.10/site-packages/pyAgrum/lib/notebook.py:267, in _reprGraph(gr, size, asString, format)
+    263   format = gum.config["notebook", "graph_format"]
+    265 if format == "svg":
+    266   gsvg = IPython.display.SVG(prepareLinksForSVG(
+--> 267       gr.create_svg(encoding="utf-8").decode('utf-8')))
+    268   if asString:
+    269     return gsvg.data
+
+File /usr/local/python/3.10.4/lib/python3.10/site-packages/pydot.py:1733, in Dot.__init__.<locals>.new_method(f, prog, encoding)
+   1729 def new_method(
+   1730         f=frmt, prog=self.prog,
+   1731         encoding=None):
+   1732     """Refer to docstring of method `create`."""
+-> 1733     return self.create(
+   1734         format=f, prog=prog, encoding=encoding)
+
+File /usr/local/python/3.10.4/lib/python3.10/site-packages/pydot.py:1933, in Dot.create(self, prog, format, encoding)
+   1930     args = list(e.args)
+   1931     args[1] = '"{prog}" not found in path.'.format(
+   1932         prog=prog)
+-> 1933     raise OSError(*args)
+   1934 else:
+   1935     raise
+
+FileNotFoundError: [Errno 2] "dot" not found in path.
+
+(pyAgrum.BayesNet<double>@0x564522a5cbe0) BN{nodes: 4, arcs: 4, domainSize: 16, dim: 9, mem: 144o}
