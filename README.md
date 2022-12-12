@@ -1,6 +1,6 @@
 # OUAF
 12 december
-- 
+- voorbeeld uit boek in een jupyter notebook maken met pyAgrum
 
 11 december, installeren van pyAgrum, graphviz
 - standaard codespace bevat al jupyter notebook, conda en pip
