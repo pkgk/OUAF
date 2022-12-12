@@ -1,4 +1,6 @@
 # OUAF
+12 december
+- 
 
 11 december, installeren van pyAgrum, graphviz
 - standaard codespace bevat al jupyter notebook, conda en pip
