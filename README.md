@@ -1,4 +1,8 @@
 # OUAF
+
+18 decemmber
+- nav mailwisseling notebook gemaakt om berekening na te bootsen
+
 12 december
 - voorbeeld uit boek in een jupyter notebook maken met pyAgrum
 
