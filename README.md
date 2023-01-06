@@ -1,5 +1,11 @@
 # OUAF
 
+6 januari
+- ivvm opstarten vanuit codespaces in een browser: jupyter notebook --generate-config
+- config file voor opstarten jupyter: /home/codespace/.jupyter/jupyter_notebook_config.py
+- aanpassen optie allow cross origin
+
+
 18 decemmber
 - nav mailwisseling notebook gemaakt om berekening na te bootsen
 
