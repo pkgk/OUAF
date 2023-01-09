@@ -1,4 +1,6 @@
 # OUAF
+7-9 januari
+- voorbeeld influence diagram gemaakt voor een printer obv datamodel
 
 6 januari
 - ivvm opstarten vanuit codespaces in een browser: jupyter notebook --generate-config
